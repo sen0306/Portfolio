@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Sean Felson</title>
+</head>
+<body>
+
+    <main>
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Sean!</h1>
+            <h2>I'm a <span id="cycling-text"></span></h2>
+            <p>I'm building my skills through my university's coursework and personal projects.</p>
+        </div>
+    </section>
+
+    <section class="about-me">
+            <div class="about-me-content">
+                <h2>About Me</h2>
+                <p>Hello! I'm Sean Felson Felix. I've wanted to become a full-stack developer since I was young. I turn challenges into opportunities to grow, and I'm always eager to learn new programming languages and frameworks. I am seeking an internship opportunity to gain hands-on experience in web or software development.</p>
+            </div>
+            <div class="skill-container">
+            <div class="skill-column">
+                <h2>What I'm familiar with so far:</h2>
+                <ul>
+                    <li>HTML<i class="devicon-html5-plain colored"></i></li>
+                    <li>CSS<i class="devicon-css3-plain colored"></i></li>
+                    <li>JavaScript<i class="devicon-javascript-plain colored"></i></li>
+                    <li>Python<i class="devicon-python-plain colored"></i></li>
+                    <li>PHP<i class="devicon-php-plain colored"></i></li>
+                    <li>MariaDB (MySQL)<i class="devicon-mysql-plain colored"></i></li>
+                </ul>
+            </div>
+            <div class="skill-column">
+                <h2>What I'm interested to learn:</h2>
+                <ul>
+                    <li>React.js<i class="devicon-react-original colored"></i></li>
+                    <li>Next.js<i class="devicon-nextjs-plain"></i></li>
+                    <li>Tailwind.css<i class="devicon-tailwindcss-plain colored"></i></li>
+                    <li>Django<i class="devicon-django-plain"></i></li>
+                    <li>Laravel<i class="devicon-laravel-plain colored"></i></li>
+                </ul>
+            </div>
+            </div>
+    </section>
+
+    <section class="projects-container">
+        <div class="projects-title">
+            <h2>Projects I have worked on</h2>
+        </div>
+        <div class="projects-content">
+            <h3>Faz Attendance System (May 2026 - Present)</h3>
+            <h4>A Final Year Project that is expected to complete by August 2026.</h4>
+            <p>HTML, CSS, PHP, MariaDB(MySQL)</p>
+        </div>
+        <div class="projects-content-1">
+            <h3>Static Website Portfolio</h3>
+            <h4>Developed a fictional portfolio for a coursework assignment.</h4>
+            <p>HTML, CSS</p>
+            <a href="https://myportfolio-sean.netlify.app/" target="blank">View Project<i class="fa fa-external-link" aria-hidden="true"></i></a>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="contact-content">
+            <h2>Contact me</h2>
+        </div>
+        <div class="card">
+        <div class="cta-card-email">
+            <h3>Copy my Email Address</h3>
+            <button id="copy-email-btn">
+                <i class="fa-regular fa-copy"></i>
+                <span id="copy-btn-text">Copy</span>
+            </button>
+        </div>
+        <div class="cta-card-linkedin">
+            <div class="linkedin">
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/seanfelsonfelix" target="_blank" aria-label="Linkedin Profile"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+
+<script>
+
+    const phrases = [
+    "future Full-Stack Developer",
+    "Quick Learner",
+    "Problem Solver"
+];
+
+const el = document.getElementById("cycling-text");
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+    charIndex--;
+    } else {
+    charIndex++;
+    }
+
+    el.textContent = currentPhrase.substring(0, charIndex);
+
+    let typeSpeed = isDeleting ? 30 : 60; // deleting is faster than typing
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+    typeSpeed = 1500; // pause at the full phrase before deleting
+    isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length; // move to next phrase, loop back to start
+    typeSpeed = 300; // small pause before typing the next one
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+type();
+
+const copyBtn = document.getElementById("copy-email-btn");
+const btnText = document.getElementById("copy-btn-text");
+
+copyBtn.addEventListener("click", () => {
+  const email = "seanfelsonfelix@gmail.com"; // replace with your real email
+
+    navigator.clipboard.writeText(email).then(() => {
+    btnText.textContent = "Copied!";
+    setTimeout(() => {
+    btnText.textContent = "Copy";
+    }, 2000); // clears the message after 2 seconds
+});
+});
+</script>
+
+</body>
+</html>
