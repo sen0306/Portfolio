@@ -443,5 +443,17 @@ li i {
         transform: none;
     }
 
+    .cta-card-resume {
+        padding: 1.5 rem 1rem;
+    }
+
+    .cta-card-resume h3 {
+        font-size: 1.2rem;
+    }
+
+    .resume-btn:hover {
+        color: inherit;
+        transform: none;
+    }
 }
 
