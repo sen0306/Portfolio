@@ -388,14 +388,22 @@ li i {
         text-align: left;
     }
 
-    .projects-content,
-    .projects-content-1 {
+    .projects-content {
         padding: 1.5rem;
     }
 
-    .projects-content h3,
-    .projects-content-1 h3 {
+    .projects-content a {
+        margin-top: 20px;
+    }
+
+    .projects-content h3 {
+        font-size: 16px;
         margin-bottom: 5px;
+    }
+
+    .projects-content h4 {
+        margin-top: 10px;
+        font-size: 13.5px;
     }
 
     .contact {
@@ -413,9 +421,9 @@ li i {
     }
 
     .linkedin a:hover {
-    color: inherit;
-    transform: none;
-    background-color: transparent;
+        color: inherit;
+        transform: none;
+        background-color: transparent;
     } 
 
     .card {
@@ -455,5 +463,6 @@ li i {
         color: inherit;
         transform: none;
     }
+
 }
 
