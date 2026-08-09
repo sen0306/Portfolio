@@ -482,6 +482,14 @@ li i {
         font-size: 1.2rem;
     }
 
+    .cta-card-github {
+        padding: 1.5rem 1rem;
+    }
+
+    .cta-card-github h3 {
+        font-size: 1.2rem;
+    }
+
     #copy-email-btn:hover {
         color: inherit;
         transform: none;
