@@ -711,6 +711,9 @@ section {
     100% { background-position: 0% 50%; }
     }
     
+    .loader-logo {
+        font-size: 24px;
+    }
     .carousel-section {
         padding: 3rem 0;
     }
@@ -955,6 +958,6 @@ section {
         font-size: 1.2rem;
         min-width: 100%;   /* full width underline instead of fixed 180px */
     }
-
+    
 }
 
