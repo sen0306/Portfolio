@@ -9,6 +9,24 @@
     <title>Sean Felix Portfolio</title>
 </head>
 <body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">Loading Portfolio..</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+        loader.classList.add('hidden');
+        }, 1000);   // small delay so the loading animation doesn't feel like a flash
+    });
+    </script>
+
     <header class="header">
 
         <nav class="navbar">

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #030412, #0b0b3c, #030412, #0f0533);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .not-found::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background: rgb(42, 64, 204);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, #3d3aed, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.05rem;
+            color: #a0a0a5;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #3d3aed;
+            color: white;
+            box-shadow: 0 4px 20px rgba(61, 58, 237, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 25px rgba(61, 58, 237, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: #0a0a14;
+            color: white;
+            border: 2px solid #3d3aed;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            background-color: #16162a;
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 5.5rem;
+            }
+
+            .error-title {
+                font-size: 1.4rem;
+            }
+
+            .error-message {
+                font-size: 0.95rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 260px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="not-found">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+            The URL you entered may be wrong or the page doesn't exist.
+        </p>
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">
+                Back to Home
+            </a>
+        </div>
+    </div>
+</html>
+</body>
+</html>
