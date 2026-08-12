@@ -6,145 +6,260 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="style.css">
-    <title>Sean Felson</title>
+    <title>Sean Felix Portfolio</title>
 </head>
 <body>
+    <header class="header">
 
-    <main>
-    <section class="home">
+        <nav class="navbar">
+            <div class="hover-bubble"></div>
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about-me" class="nav-item">About Me</a>
+            <a href="#featured-projects" class="nav-item">Academic Projects</a>
+            <a href="#skill" class="nav-item">Skills</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+<main>
+<section class="home" id="home">
         <div class="home-content">
             <h1>Hi, I'm Sean!</h1>
-            <h2>I'm <span id="cycling-text"></span></h2>
-            <p>I'm building my skills through my university's coursework and personal projects.</p>
+            <h2>I'm a future <span id="cycling-text"></span></h2>
+            <p>I love to code on my free time and learn new tech stacks.</p>
         </div>
     </section>
 
-    <section class="about-me">
-            <div class="about-me-content">
+    <section class="about-me" id="about-me">
+            <div class="about-me-card">
                 <h2>About Me</h2>
-                <p>Hello! I'm Sean Felson Felix. I've wanted to become a full-stack developer since I was young. I turn challenges into opportunities to grow, and I'm always eager to learn new programming languages and frameworks. I am seeking an internship opportunity to gain hands-on experience in web or software development to enhance my technical skills and contribute to meaningful projects.</p>
-            </div>
-            <div class="skill-container">
-            <div class="skill-column">
-                <h2>Technical Skills</h2>
-                <ul>
-                    <li>HTML<i class="devicon-html5-plain colored"></i></li>
-                    <li>CSS<i class="devicon-css3-plain colored"></i></li>
-                    <li>JavaScript<i class="devicon-javascript-plain colored"></i></li>
-                    <li>Python<i class="devicon-python-plain colored"></i></li>
-                    <li>PHP<i class="devicon-php-plain colored"></i></li>
-                    <li>MySQL<i class="devicon-mysql-plain colored"></i></li>
-                    <li>Git<i class="devicon-git-plain colored"></i></li>
-                    <li>GitHub<i class="devicon-github-plain"></i></li>
-                    <li>Visual Studio Code<i class="devicon-vscode-plain colored"></i></li>
-                    <li>PyCharm<i class="devicon-pycharm-plain colored"></i></li>
-                </ul>
-            </div>
-            <div class="skill-column">
-                <h2>Upskilling</h2>
-                <ul>
-                    <li>React.js<i class="devicon-react-original colored"></i></li>
-                    <li>Next.js<i class="devicon-nextjs-plain"></i></li>
-                    <li>Tailwind.css<i class="devicon-tailwindcss-plain colored"></i></li>
-                    <li>Django<i class="devicon-django-plain"></i></li>
-                    <li>Laravel<i class="devicon-laravel-plain colored"></i></li>
-                    <li>FastAPI<i class="devicon-fastapi-plain colored"></i></li>
-                    <li>Node.js<i class="devicon-nodejs-plain colored"></i></li>
-                </ul>
-            </div>
+                <p>I am someone who thrives on learning, problem-solving, and continuous growth. My personality of curiosity, adaptability, and persistence helps me tackle challenges.</p>
+                <p>I'm driven by a desire to make an impact and keep evolving both personally and professionally.</p>
             </div>
     </section>
 
-    <section class="projects-container">
-        <div class="projects-title">
-            <h2>My Academic Projects</h2>
+    <section class="carousel-section" id="featured-projects">
+    <div class="carousel-title">
+        <h2>My Academic Projects</h2>
+    </div>
+
+    <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-card" style="background-image: url('assets/project1.png');">
+            <div class="card-icons">
+                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
+                <a href="https://github.com/sen0306/Project-Paper---UIU-V2.0-Student-Attendance-System" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="card-overlay">
+                <span class="card-tag">FINAL YEAR PROJECT</span>
+                <h3>Student Attendance System</h3>
+            </div>
+            <div class="card-details">
+                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <span class="card-tag">FINAL YEAR PROJECT</span>
+                <h3>Student Attendance System</h3>
+                <p>A web-based attendance system built for a final year project, designed to streamline tracking and reporting for students and staff.</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+                <div class="detail-actions">
+                    <a href="https://github.com/sen0306/Project-Paper---UIU-V2.0-Student-Attendance-System" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
         </div>
-        <div class="projects-content">
-            <h3>Student Attendance System (May 2026 - August 2026)</h3>
-            <h4>Designed and developed a web-based attendance system for a final year project.</h4>
-            <p>HTML, CSS, PHP, MariaDB(MySQL)</p>
-            <a href="https://github.com/sen0306/Project-Paper---UIU-V2.0-Student-Attendance-System" target="blank">View in GitHub<i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+        <div class="carousel-card" style="background-image: url('assets/project2.png');">
+            <div class="card-icons">
+                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
+                <a href="https://github.com/sen0306/ss_ecommerce" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="card-overlay">
+                <span class="card-tag">COURSEWORK</span>
+                <h3>E-Commerce Website</h3>
+            </div>
+            <div class="card-details">
+                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <span class="card-tag">COURSEWORK</span>
+                <h3>E-Commerce Website</h3>
+                <p>Developed a simple e-commerce website</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            <div class="detail-actions">
+                    <a href="https://github.com/sen0306/ss_ecommerce" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            </div>
         </div>
-        <div class="projects-content">
-            <h3>E-Commerce Website (July 2026 - August 2026)</h3>
-            <h4>Developed a simple e-commerce website for a coursework assignment.</h4>
-            <p>HTML, CSS, JavaScript, PHP, MariaDB (MySQL)</p>
-            <a href="https://github.com/sen0306/ss_ecommerce" target="blank">View in GitHub<i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+        <div class="carousel-card" style="background-image: url('assets/project3.png');">
+            <div class="card-icons">
+                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
+                <a href="https://github.com/sen0306/Static-Website-Portfolio-Project" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="card-overlay">
+                <span class="card-tag">COURSEWORK</span>
+                <h3>Static Website Portfolio</h3>
+            </div>
+            <div class="card-details">
+                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <span class="card-tag">COURSEWORK</span>
+                <h3>Static Website Portfolio</h3>
+                <p>Developed a fictional portfolio for a coursework assignment.</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            <div class="detail-actions">
+                    <a href="https://github.com/sen0306/Static-Website-Portfolio-Project" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            </div>
         </div>
-        <div class="projects-content">
-            <h3>Static Website Portfolio (June 2026 - July 2026)</h3>
-            <h4>Developed a fictional portfolio for a coursework assignment.</h4>
-            <p>HTML, CSS</p>
-            <a href="https://github.com/sen0306/Static-Website-Portfolio-Project" target="blank">View in GitHub<i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+        <div class="carousel-card" style="background-image: url('assets/project4.png');">
+            <div class="card-icons">
+                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
+                <a href="https://github.com/sen0306/apple_lib_sys.com" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="card-overlay">
+                <span class="card-tag">COURSEWORK</span>
+                <h3>Library System</h3>
+            </div>
+            <div class="card-details">
+                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <span class="card-tag">COURSEWORK</span>
+                <h3>Library System</h3>
+                <p>Served as co-developer in designing the system interface.</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            <div class="detail-actions">
+                    <a href="https://github.com/sen0306/apple_lib_sys.com" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            </div>
         </div>
-        <div class="projects-content">
-            <h3>Library System (September 2025 - December 2025)</h3>
-            <h4>Served as co-developer in designing the system interface.</h4>
-            <p>HTML, CSS, JavaScript, PHP, MariaDB (MySQL)</p>
-            <a href="https://github.com/sen0306/apple_lib_sys.com" target="blank">View in GitHub<i class="fa fa-external-link" aria-hidden="true"></i></a>
-        </div>
+
+    </div>  <!-- closes .carousel-track -->
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-arrow left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-arrow right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
     </section>
     
-    <section class="hire-me">
-        <div class="hire-me-content">
-            <h2>Why hire me?</h2>
-        </div>
-        <div class="hire-me-card">
-            <div class="hire-me-card-content">
-                <ul>
-                    <li>Quick Learner</li>
-                    <p>Had no experience in programming but successfully developed and deployed a static website within a short timeframe.</p>
-                    <li>Problem Solver</li>
-                    <p>Able to tackle problems and find effective solutions.</p>
-                    <li>Team Player</li>
-                    <p>Collaborated with team members and communicated effectively to achieve common goals.</p>
-                    <li>Independent</li>
-                    <p>Capable of working autonomously and taking initiative in completing tasks.</p>
-                </ul>
+    <section class="skill" id="skill">
+        <h2 class="skill-h2">Technical Skills</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <i class="devicon-html5-plain colored"></i>
+                <p>HTML</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-css3-plain colored"></i>
+                <p>CSS</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-javascript-plain colored"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-python-plain colored"></i>
+                <p>Python</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-php-plain colored"></i>
+                <p>PHP</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-mysql-plain colored"></i>
+                <p>MySQL</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-git-plain colored"></i>
+                <p>Git</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-github-plain"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-vscode-plain colored"></i>
+                <p>Visual Studio Code</p>
+            </div>
+            <div class="tech-card">
+                <i class="devicon-pycharm-plain colored"></i>
+                <p>PyCharm</p>
             </div>
         </div>
     </section>
 
-    <section class="contact">
-        <div class="contact-content">
-            <h2>Contact me</h2>
-        </div>
-        <div class="card">
-        <div class="cta-card-email">
-            <h3>Copy my Email Address</h3>
-            <button id="copy-email-btn">
-                <i class="fa-regular fa-copy"></i>
-                <span id="copy-btn-text">Copy</span>
-            </button>
-        </div>
-        <div class="cta-card-resume">
-            <h3>Download my Resume</h3>
-            <a href="assets/SeanFelixResume(July).pdf" download="SeanFelixResume(July).pdf" class="resume-btn">Download<i class="fa-solid fa-download"></i></a>
-        </div>
-        <div class="cta-card-linkedin">
-            <div class="linkedin">
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/seanfelsonfelix" target="_blank" aria-label="Linkedin Profile"><i class="fa-brands fa-linkedin"></i></a>
+    <section class="hire-me">
+        <div class="hire-me-card">
+            <div class="hire-me-card-content">
+                <h2 class="hire-title">Why hire me?</h2>
+                <h3 class="hire-sub">Quick Learner</h3>
+                <p>Had no experience in programming but successfully developed and deployed a static website within a short timeframe.</p>
+                <h3 class="hire-sub">Problem Solver</h3>
+                <p>Able to tackle problems and find effective solutions.</p>
+                <h3 class="hire-sub">Team Player</h3>
+                <p>Collaborated with team members and communicated effectively to achieve common goals.</p>
+                <h3 class="hire-sub">Independent</h3>
+                <p>Capable of working autonomously and taking initiative in completing tasks.</p>
             </div>
-        </div>
-        <div class="cta-card-github">
-            <div class="github">
-                <h3>GitHub</h3>
-                <a href="https://github.com/sen0306" target="_blank" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
         </div>
     </section>
-    </main>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+    <div class="contact-card">
+    <div class="contact-columns">
+        <div class="contact-col">
+            <div class="info-block">
+                <span class="info-label">Email</span>
+                <p class="info-value">seanfelsonfelix@gmail.com</p>
+            </div>
+            <div class="info-block">
+                <span class="info-label">Location</span>
+                <p class="info-value">Malaysia</p>
+            </div>
+        </div>
+
+        <div class="contact-col">
+            <span class="info-label">Social</span>
+            <a href="https://github.com/sen0306" target="_blank" class="social-link">
+                GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/seanfelsonfelix" target="_blank" class="social-link">
+                LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="assets/SeanFelixResume(July).pdf" download="SeanFelixResume(July).pdf" class="social-link">
+                Resume <i class="fa-solid fa-download"></i>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+</main>
 
 <script>
 
     const phrases = [
-    "a future Full-Stack Developer",
-    "a Quick Learner",
-    "a Problem Solver",
-    "a Team Player",
-    "Independent"
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Web Developer",
 ];
 
 const el = document.getElementById("cycling-text");
@@ -179,19 +294,159 @@ function type() {
 
 type();
 
-const copyBtn = document.getElementById("copy-email-btn");
-const btnText = document.getElementById("copy-btn-text");
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('section[id]');
 
-copyBtn.addEventListener("click", () => {
-  const email = "seanfelsonfelix@gmail.com"; // replace with your real email
+// Click: immediately mark the clicked link active
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+    navItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    });
+});
 
-    navigator.clipboard.writeText(email).then(() => {
-    btnText.textContent = "Copied!";
-    setTimeout(() => {
-    btnText.textContent = "Copy";
-    }, 2000); // clears the message after 2 seconds
+// Scroll-spy: mark active based on which section is in view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === `#${id}`);
+        });
+    }
+    });
+}, {
+    rootMargin: '-100px 0px -55% 0px'  // triggers when section is roughly centered in viewport
 });
+
+const navbar = document.querySelector('.navbar');
+const bubble = document.querySelector('.hover-bubble');
+const navItem = document.querySelectorAll('.nav-item');
+
+navItem.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+    const itemRect = item.getBoundingClientRect();
+    const navRect = navbar.getBoundingClientRect();
+
+    bubble.style.width = `${itemRect.width}px`;
+    bubble.style.transform = `translateX(${itemRect.left - navRect.left}px)`;
+    });
 });
+sections.forEach(section => observer.observe(section));
+
+const hamburger = document.getElementById('hamburger');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navbar.classList.toggle('active');
+});
+
+// close menu after clicking a nav link
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('active');
+    });
+});
+
+const track = document.getElementById('carouselTrack');
+const cards = document.querySelectorAll('.carousel-card');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+
+function scrollToCard(index) {
+    if (index < 0) index = 0;
+    if (index >= cards.length) index = cards.length - 1;
+    currentIndex = index;
+
+    const card = cards[index];
+    const trackWidth = track.clientWidth;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+
+    const targetScrollLeft = cardLeft - (trackWidth / 2) + (cardWidth / 2);
+
+    track.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+}
+
+nextBtn.addEventListener('click', () => scrollToCard(currentIndex + 1));
+prevBtn.addEventListener('click', () => scrollToCard(currentIndex - 1));
+
+window.addEventListener('load', () => {
+    scrollToCard(0);
+});
+
+document.querySelectorAll('.expand-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const details = btn.closest('.carousel-card').querySelector('.card-details');
+        details.classList.add('active');
+    });
+});
+
+document.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.closest('.card-details').classList.remove('active');
+    });
+});
+
+const dotsContainer = document.getElementById('carouselDots');
+
+cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('carousel-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => scrollToCard(i));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dot');
+
+function updateDots(index) {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+function scrollToCard(index) {
+    if (index < 0) index = 0;
+    if (index >= cards.length) index = cards.length - 1;
+    currentIndex = index;
+
+    const card = cards[index];
+    const trackWidth = track.clientWidth;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+
+    const targetScrollLeft = cardLeft - (trackWidth / 2) + (cardWidth / 2);
+
+    track.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+    updateDots(index);   // add this line
+}
+
+let scrollDebounce;
+track.addEventListener('scroll', () => {
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => {
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, i) => {
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distance = Math.abs(cardCenter - trackCenter);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = i;
+            }
+        });
+
+        currentIndex = closestIndex;
+        updateDots(closestIndex);
+    }, 100);
+}, { passive: true });
+
 </script>
 
 </body>
