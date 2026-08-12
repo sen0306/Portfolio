@@ -305,19 +305,26 @@ navItems.forEach(item => {
     });
 });
 
-// Scroll-spy: mark active based on which section is in view
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navItems.forEach(item => {
-        item.classList.toggle('active', item.getAttribute('href') === `#${id}`);
-        });
-    }
+function updateActiveNav() {
+    const scrollPos = window.scrollY + 150;   // 150px offset accounts for your fixed header
+
+    let currentSection = sections[0];
+
+    sections.forEach(section => {
+        if (section.offsetTop <= scrollPos) {
+            currentSection = section;
+        }
     });
-}, {
-    rootMargin: '-100px 0px -55% 0px'  // triggers when section is roughly centered in viewport
-});
+
+    const currentId = currentSection.getAttribute('id');
+
+    navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === `#${currentId}`);
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
 
 const navbar = document.querySelector('.navbar');
 const bubble = document.querySelector('.hover-bubble');
