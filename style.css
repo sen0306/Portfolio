@@ -646,6 +646,13 @@ section {
 
 /* Above is for contact section */
 @media (max-width: 480px) {
+    
+    @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+    }
+    
     .carousel-section {
         padding: 3rem 0;
     }
