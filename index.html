@@ -339,7 +339,6 @@ navItem.forEach(item => {
     bubble.style.transform = `translateX(${itemRect.left - navRect.left}px)`;
     });
 });
-sections.forEach(section => observer.observe(section));
 
 const hamburger = document.getElementById('hamburger');
 
@@ -356,6 +355,17 @@ navItems.forEach(item => {
     });
 });
 
+// NEW: close menu when clicking anywhere outside it
+document.addEventListener('click', (e) => {
+    const isClickInsideNavbar = navbar.contains(e.target);
+    const isClickOnHamburger = hamburger.contains(e.target);
+
+    if (!isClickInsideNavbar && !isClickOnHamburger && navbar.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+});
+
 const track = document.getElementById('carouselTrack');
 const cards = document.querySelectorAll('.carousel-card');
 const prevBtn = document.getElementById('prevBtn');
@@ -363,31 +373,18 @@ const nextBtn = document.getElementById('nextBtn');
 
 let currentIndex = 0;
 
-function scrollToCard(index) {
-    if (index < 0) index = 0;
-    if (index >= cards.length) index = cards.length - 1;
-    currentIndex = index;
-
-    const card = cards[index];
-    const trackWidth = track.clientWidth;
-    const cardLeft = card.offsetLeft;
-    const cardWidth = card.offsetWidth;
-
-    const targetScrollLeft = cardLeft - (trackWidth / 2) + (cardWidth / 2);
-
-    track.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
-}
-
-nextBtn.addEventListener('click', () => scrollToCard(currentIndex + 1));
-prevBtn.addEventListener('click', () => scrollToCard(currentIndex - 1));
-
 window.addEventListener('load', () => {
     scrollToCard(0);
 });
 
-document.querySelectorAll('.expand-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const details = btn.closest('.carousel-card').querySelector('.card-details');
+document.querySelectorAll('.carousel-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // don't open details if the click was on the GitHub icon or the close button
+        if (e.target.closest('.github-icon') || e.target.closest('.close-btn')) {
+            return;
+        }
+
+        const details = card.querySelector('.card-details');
         details.classList.add('active');
     });
 });
@@ -431,6 +428,9 @@ function scrollToCard(index) {
     track.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
     updateDots(index);   // add this line
 }
+
+nextBtn.addEventListener('click', () => scrollToCard(currentIndex + 1));
+prevBtn.addEventListener('click', () => scrollToCard(currentIndex - 1));
 
 let scrollDebounce;
 track.addEventListener('scroll', () => {
