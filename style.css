@@ -10,11 +10,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth !important;
-}
-
-body {
+html, body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
@@ -22,6 +18,7 @@ body {
     background-size: 400% 400%;
     animation: gradientShift 10s ease infinite;
     color: white;
+    scroll-behavior: smooth !important;
 }
 
 .loader {
