@@ -15,7 +15,6 @@
     min-height: 100vh;
     overflow-x: hidden;
     background: linear-gradient(#030412);
-    background-size: 400% 400%;
     color: white;
     scroll-behavior: smooth ;
 }
@@ -313,30 +312,6 @@ section {
 }
 
 .card-overlay {
-    position: relative;
-    z-index: 2;   /* sits above the darkening layer */
-}
-
-.icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    font-size: 1.2rem;
-    backdrop-filter: blur(4px);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.icon-btn:hover {
-    background: rgba(124, 58, 237, 0.8);
-    transform: scale(1.1);
-}
-
-.card-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -401,16 +376,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
     z-index: 5;
     border-radius: 24px;   /* match .carousel-card's own border-radius so corners stay rounded */
-}
-
-.card-details.active {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .card-details .card-tag {
@@ -479,12 +446,6 @@ section {
 
 .github-btn:hover {
     background: #3d3aed;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
 
 .carousel-dots {
@@ -616,52 +577,6 @@ section {
     transform: translate(2px, -2px);   /* subtle arrow nudge on hover */
 }
 
-#copy-email-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    background-color: #0a0a14;
-    color: white;
-    border: 2px solid #3d3aed;
-    border-radius: 50px;
-    padding: 0.9rem 1.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-#copy-email-btn i {
-    font-size: 1.1rem;
-}
-
-#copy-email-btn:hover {
-    transform: scale(1.05);
-    background-color: #16162a;
-}
-
-.resume-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    background-color: #0a0a14;
-    color: white;
-    border: 2px solid #3d3aed;
-    border-radius: 50px;
-    padding: 0.9rem 1.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.resume-btn i {
-    font-size: 1.1rem;
-}
-
-.resume-btn:hover {
-    transform: scale(1.05);
-    background-color: #16162a;
-}
-
 .hamburger {
     display: none;
     flex-direction: column;
@@ -724,12 +639,6 @@ section {
         border-radius: 16px;
     }
 
-    .icon-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-
     .card-overlay {
         padding: 1.25rem;
     }
@@ -784,11 +693,6 @@ section {
         padding: 8px 16px;
     }
 
-    .close-btn {
-        top: 12px;
-        right: 12px;
-    }
-
     .hamburger {
         display: flex;
     }
@@ -836,10 +740,6 @@ section {
         font-size: 2.5rem;
     }
 
-    .about-me-content p {
-        font-size: 1.15rem;
-    }
-
     .home::before {
         width: 500px;
         height: 300px;
@@ -879,10 +779,6 @@ section {
         font-size: 16px;
     }
 
-    .projects-title h2 {
-        font-size: 25px;
-    }
-
     .hire-me-card {
         width: 330px;
     }
@@ -897,28 +793,6 @@ section {
 
     .hire-me-card-content p {
         font-size: 13px;
-    }
-
-    .projects-container {
-        min-height: auto;
-    }
-
-    .projects-content {
-        padding: 1.5rem;
-    }
-
-    .projects-content a {
-        margin-top: 20px;
-    }
-
-    .projects-content h3 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-
-    .projects-content h4 {
-        margin-top: 10px;
-        font-size: 13.5px;
     }
 
     .contact h2 {
