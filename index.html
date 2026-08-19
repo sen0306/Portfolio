@@ -397,19 +397,13 @@ window.addEventListener('load', () => {
 
 document.querySelectorAll('.carousel-card').forEach(card => {
     card.addEventListener('click', (e) => {
-        // don't open details if the click was on the GitHub icon or the close button
-        if (e.target.closest('.github-icon') || e.target.closest('.close-btn')) {
+        // don't toggle if the click was on the GitHub icon
+        if (e.target.closest('.github-icon')) {
             return;
         }
 
         const details = card.querySelector('.card-details');
-        details.classList.add('active');
-    });
-});
-
-document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.closest('.card-details').classList.remove('active');
+        details.classList.toggle('active');
     });
 });
 

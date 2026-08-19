@@ -18,7 +18,7 @@
     background-size: 400% 400%;
     animation: gradientShift 10s ease infinite;
     color: white;
-    scroll-behavior: smooth !important;
+    scroll-behavior: smooth ;
 }
 
 .loader {
@@ -133,7 +133,7 @@ section {
     position: relative;
     z-index: 1;
     text-decoration: none;
-    color: #a0a0a5;             /* muted gray text */
+    color: #a0a0a5;
     font-size: 14px;
     font-weight: 500;
     padding: 8px 18px;
@@ -210,9 +210,11 @@ section {
     border-radius: 16px;
     padding: 2rem 1rem;
     gap: 1rem;
+    max-width: 50%;
+    justify-self: center;
 }
 .about-me-card h2 {
-    font-size: 32px;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
 }
@@ -366,7 +368,7 @@ section {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #322fff;
+    color: #fffc2f;
     margin-bottom: 0.5rem;
     text-shadow: 0 1px 6px rgba(0,0,0,0.8);
 }
@@ -380,7 +382,7 @@ section {
 .carousel-arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-250%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -391,7 +393,7 @@ section {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 3;
+    z-index: 6;
     transition: background 0.2s ease;
 }
 
@@ -510,6 +512,17 @@ section {
     background: #3d3aed;
 }
 
+.carousel-card .card-details {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.carousel-card:hover .card-details {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Above is for project section */
 
 .hire-me {
@@ -525,7 +538,7 @@ section {
     border-radius: 24px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     padding: 2.5rem;
-    width: 100%;
+    width: 75%;
 }
 
 .hire-title {
@@ -543,7 +556,7 @@ section {
 
 .hire-sub {
     font-size: 24px;
-    color: blue;
+    color: #fffc2f;
     margin-bottom: 5px;
 }
 
@@ -701,13 +714,6 @@ section {
     
 /* Above is for contact section */
 @media (max-width: 480px) {
-    
-    @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-    }
-    
     .loader-logo {
         font-size: 24px;
     }
@@ -760,7 +766,7 @@ section {
         width: 38px;
         height: 38px;
         font-size: 1rem;
-        top: 37%;
+        top: 48%;
     }
 
     .carousel-arrow.left {
@@ -882,6 +888,9 @@ section {
         font-size: 25px;
     }
 
+    .about-me-card {
+        max-width: 100%;
+    }
     .about-me-card h2 {
         font-size: 25px;
     }
@@ -894,12 +903,20 @@ section {
         font-size: 25px;
     }
 
+    .hire-me-card {
+        width: 330px;
+    }
+
     .hire-title {
         font-size: 25px;
     }
 
+    .hire-sub {
+        font-size: 20px;
+    }
+
     .hire-me-card-content p {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .projects-container {
