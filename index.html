@@ -70,15 +70,15 @@
 
         <div class="carousel-card" style="background-image: url('assets/project1.png');">
             <div class="card-icons">
-                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
-                <a href="https://github.com/sen0306/Project-Paper---UIU-V2.0-Student-Attendance-System" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+                
+                
             </div>
             <div class="card-overlay">
                 <span class="card-tag">FINAL YEAR PROJECT</span>
                 <h3>Student Attendance System</h3>
             </div>
             <div class="card-details">
-                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                
                 <span class="card-tag">FULL-STACK</span>
                 <h3>Student Attendance System</h3>
                 <p>A web-based attendance system built for a final year project, designed to streamline tracking and reporting for students and staff.</p>
@@ -96,15 +96,15 @@
 
         <div class="carousel-card" style="background-image: url('assets/project2.png');">
             <div class="card-icons">
-                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
-                <a href="https://github.com/sen0306/ss_ecommerce" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+                
+                
             </div>
             <div class="card-overlay">
                 <span class="card-tag">COURSEWORK</span>
                 <h3>E-Commerce Website</h3>
             </div>
             <div class="card-details">
-                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                
                 <span class="card-tag">FULL-STACK</span>
                 <h3>E-Commerce Website</h3>
                 <p>Developed a simple e-commerce website</p>
@@ -123,15 +123,15 @@
 
         <div class="carousel-card" style="background-image: url('assets/project3.png');">
             <div class="card-icons">
-                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
-                <a href="https://github.com/sen0306/Static-Website-Portfolio-Project" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+                
+                
             </div>
             <div class="card-overlay">
                 <span class="card-tag">COURSEWORK</span>
                 <h3>Static Website Portfolio</h3>
             </div>
             <div class="card-details">
-                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                
                 <span class="card-tag">STATIC WEBSITE</span>
                 <h3>Static Website Portfolio</h3>
                 <p>Developed a fictional portfolio for a coursework assignment.</p>
@@ -147,15 +147,15 @@
 
         <div class="carousel-card" style="background-image: url('assets/project4.png');">
             <div class="card-icons">
-                <button class="icon-btn expand-btn"><i class="fa-solid fa-plus"></i></button>
-                <a href="https://github.com/sen0306/apple_lib_sys.com" target="_blank" class="icon-btn"><i class="fa-brands fa-github"></i></a>
+                
+                
             </div>
             <div class="card-overlay">
                 <span class="card-tag">COURSEWORK</span>
                 <h3>Library System</h3>
             </div>
             <div class="card-details">
-                <button class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                
                 <span class="card-tag">FULL-STACK</span>
                 <h3>Library System</h3>
                 <p>Served as co-developer in designing the system interface.</p>
@@ -393,18 +393,6 @@ let currentIndex = 0;
 
 window.addEventListener('load', () => {
     scrollToCard(0);
-});
-
-document.querySelectorAll('.carousel-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-        // don't toggle if the click was on the GitHub icon
-        if (e.target.closest('.github-icon')) {
-            return;
-        }
-
-        const details = card.querySelector('.card-details');
-        details.classList.toggle('active');
-    });
 });
 
 const dotsContainer = document.getElementById('carouselDots');

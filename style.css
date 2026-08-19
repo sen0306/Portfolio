@@ -14,9 +14,8 @@
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(-45deg, #030412, #0b0b3c, #030412, #0f0533);
+    background: linear-gradient(#030412);
     background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
     color: white;
     scroll-behavior: smooth ;
 }
@@ -77,12 +76,6 @@
 @keyframes loading {
     0% { width: 0%; }
     100% { width: 100%; }
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 section {
@@ -210,7 +203,7 @@ section {
     border-radius: 16px;
     padding: 2rem 1rem;
     gap: 1rem;
-    max-width: 50%;
+    max-width: 60%;
     justify-self: center;
 }
 .about-me-card h2 {
@@ -319,20 +312,9 @@ section {
     z-index: 1;
 }
 
-.card-icons,
 .card-overlay {
     position: relative;
     z-index: 2;   /* sits above the darkening layer */
-}
-
-.card-icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    z-index: 2;
 }
 
 .icon-btn {
@@ -394,11 +376,13 @@ section {
     justify-content: center;
     cursor: pointer;
     z-index: 6;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .carousel-arrow:hover {
-    background: rgba(124, 58, 237, 0.9);
+    background: #3d3aed;
+    transform: translateY(-250%) translateY(-4px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
 }
 
 .carousel-arrow.left {
@@ -443,6 +427,19 @@ section {
     line-height: 1.6;
     color: #d0d0d5;
     margin-bottom: 1.5rem;
+}
+
+.carousel-card .card-details {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.carousel-card:hover .card-details {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .tech-tags {
@@ -510,17 +507,6 @@ section {
 .carousel-dot.active {
     width: 24px;
     background: #3d3aed;
-}
-
-.carousel-card .card-details {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease;
-}
-
-.carousel-card:hover .card-details {
-    opacity: 1;
-    visibility: visible;
 }
 
 /* Above is for project section */
@@ -736,12 +722,6 @@ section {
         max-width: 88%;
         aspect-ratio: 16/19;   /* slightly taller ratio reads better on narrow screens than 16:9 */
         border-radius: 16px;
-    }
-
-    .card-icons {
-        top: 12px;
-        right: 12px;
-        gap: 0.5rem;
     }
 
     .icon-btn {
