@@ -1,0 +1,954 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#030412);
+    color: white;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #030412;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loader-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.loader-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.loader-fill {
+    width: 0%;
+    height: 100%;
+    background: #3d3aed;
+    border-radius: 999px;
+    animation: loading 1.2s ease-in-out forwards;
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    scroll-margin-top: 50px;
+}
+
+.header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+.orbit {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-left: 50px;
+}
+
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: spin 20s linear infinite;
+}
+
+.orbit-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+/* Position each icon around the circle — 8 icons, 45deg apart, radius 130px */
+.orbit-icon:nth-child(1) { transform: rotate(0deg) translate(130px) rotate(0deg); }
+.orbit-icon:nth-child(2) { transform: rotate(45deg) translate(130px) rotate(-45deg); }
+.orbit-icon:nth-child(3) { transform: rotate(90deg) translate(130px) rotate(-90deg); }
+.orbit-icon:nth-child(4) { transform: rotate(135deg) translate(130px) rotate(-135deg); }
+.orbit-icon:nth-child(5) { transform: rotate(180deg) translate(130px) rotate(-180deg); }
+.orbit-icon:nth-child(6) { transform: rotate(225deg) translate(130px) rotate(-225deg); }
+.orbit-icon:nth-child(7) { transform: rotate(270deg) translate(130px) rotate(-270deg); }
+.orbit-icon:nth-child(8) { transform: rotate(315deg) translate(130px) rotate(-315deg); }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.navbar {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+    align-items:center;
+    gap: 4px;
+    background: #1c1c1e;       
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.hover-bubble {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: calc(100% - 12px);  /* matches navbar padding */
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);   /* subtle light bubble, distinct from the active gradient */
+    transition: transform 0.25s ease, width 0.25s ease;
+    pointer-events: none;   /* so it never blocks clicks on the links */
+    opacity: 0;
+}
+
+.navbar:hover .hover-bubble {
+    opacity: 1;
+}
+
+.nav-item {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: #a0a0a5;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-item.active {
+    color: #ffffff;
+    background: #3d3aed; /* purple gradient */
+    box-shadow: 0 2px 10px rgba(11, 11, 155, 0.563);
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background: rgb(42, 64, 204);
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.25;
+    top: 115px;
+    left: 60%;
+    z-index: -1;
+}
+
+.home .home-content h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home .home-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content span {
+    color: #3d3aed;
+}
+
+.home .home-content p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+#cycling-text::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Above is for home section */
+.about-me-card {
+    background: rgba(8, 9, 63, 0.371);
+    border: 1.5px solid #3d3aed;  
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    max-width: 60%;
+    justify-self: center;
+}
+.about-me-card h2 {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me-card p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    padding: 20px;
+}
+
+/* Above is About Me */
+.skill-h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-card {
+    background: rgba(8, 9, 63, 0.371);;
+    border: 1.5px solid #3d3aed;  
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+.tech-card i {
+    font-size: 2.5rem;
+}
+
+.tech-card p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* Above is for skill section */
+
+.carousel-section {
+    position: relative;
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.carousel-title h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 32px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20%;
+    scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    flex: 0 0 60%;   /* each card takes 60% of track width, leaving room to peek neighbors */
+    scroll-snap-align: center;
+    max-width: 60%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.6) 60%, transparent 100%);
+}
+
+.card-tag {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fffc2f;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+}
+
+.card-overlay h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-250%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(28, 28, 30, 0.9);
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 6;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background: #3d3aed;
+    transform: translateY(-250%) translateY(-4px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+}
+
+.carousel-arrow.left {
+    left: 4%;
+}
+
+.carousel-arrow.right {
+    right: 4%;
+}
+
+.card-details {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 20, 0.97);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+    border-radius: 24px;   /* match .carousel-card's own border-radius so corners stay rounded */
+}
+
+.card-details .card-tag {
+    margin-bottom: 0.5rem;
+}
+
+.card-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.card-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d0d0d5;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-card .card-details {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.carousel-card:hover .card-details {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags span {
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid #3d3aed;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    background: #1c1c1e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.github-btn:hover {
+    background: #3d3aed;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.carousel-dot.active {
+    width: 24px;
+    background: #3d3aed;
+}
+
+/* Above is for project section */
+
+.hire-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hire-me-card {
+    background-color: rgba(8, 9, 63, 0.371);
+    border: 1.5px solid #3d3aed;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    width: 75%;
+}
+
+.hire-title {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hire-me-card-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hire-sub {
+    font-size: 24px;
+    color: #fffc2f;
+    margin-bottom: 5px;
+}
+
+.hire-me-card-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Above is for hire me section */
+.contact-card {
+    display: flex;
+    justify-content: center;
+}
+
+.contact h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    font-size: 32px;
+}
+
+.contact-columns {
+    display: flex;
+    gap: 10rem;
+    flex-wrap: wrap;
+}
+
+.contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #8a8a95;   /* muted gray, like your reference */
+    margin-bottom: 0.4rem;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    min-width: 180px;
+}
+
+.social-link i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    color: #3d3aed;
+    border-color: #3d3aed;
+}
+
+.social-link:hover i {
+    transform: translate(2px, -2px);   /* subtle arrow nudge on hover */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: #1c1c1e;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+/* Above is for contact section */
+@media (max-width: 480px) {
+    .loader-logo {
+        font-size: 24px;
+    }
+
+    .orbit {
+        display: none;
+    }
+
+    .carousel-section {
+        padding: 3rem 0;
+    }
+
+    .carousel-title h2 {
+        font-size: 22px;
+        margin-bottom: 2rem;
+    }
+
+    .carousel-track {
+        padding: 0 8%;   /* smaller peek on mobile — more screen real estate per card */
+        gap: 1rem;
+    }
+
+    .carousel-card {
+        flex: 0 0 88%;   /* cards take up most of the screen width on mobile */
+        max-width: 88%;
+        aspect-ratio: 16/19;   /* slightly taller ratio reads better on narrow screens than 16:9 */
+        border-radius: 16px;
+    }
+
+    .card-overlay {
+        padding: 1.25rem;
+    }
+
+    .card-tag {
+        font-size: 0.65rem;
+    }
+
+    .card-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        top: 48%;
+    }
+
+    .carousel-arrow.left {
+        left: 2%;
+    }
+
+    .carousel-arrow.right {
+        right: 2%;
+    }
+
+    /* card-details (expanded view) needs smaller text/spacing too */
+    .card-details {
+        padding: 1rem;
+        border-radius: 16px;
+        z-index: 2;
+    }
+
+    .card-details h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .card-details p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .tech-tags span {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+    .github-btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+    position: fixed;
+    top: 70px;      /* sits below your header, adjust to match header height */
+    right: 20px;
+    width: 220px;
+    background: rgba(10, 10, 20, 0.97);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    /* hidden by default on mobile */
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+    }
+
+    .navbar.active {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: all;
+    }
+
+    .nav-item {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+    border-radius: 8px;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+    background: #3d3aed;
+    }
+
+    /* stagger each link fading in */
+    .navbar.active .nav-item {
+    animation: fadeInUp 0.3s ease forwards;
+    opacity: 0;
+    }
+    .navbar.active .nav-item:nth-child(1) { animation-delay: 0.03s; }
+    .navbar.active .nav-item:nth-child(2) { animation-delay: 0.06s; }
+    .navbar.active .nav-item:nth-child(3) { animation-delay: 0.09s; }
+    .navbar.active .nav-item:nth-child(4) { animation-delay: 0.12s; }
+    .navbar.active .nav-item:nth-child(5) { animation-delay: 0.15s; }
+
+    @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    }
+
+    .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+    }
+
+    .hover-bubble {
+        display: none;   /* hover bubble doesn't make sense on touch devices */
+    }
+
+    .header {
+        justify-content: flex-end;
+        padding-right: 6%;
+        top: 20px;
+    }
+
+    section {
+        padding: 3rem 6% 3rem;
+    }
+    
+    .home .home-content h1  {
+        font-size: 2.5rem;
+    }
+
+    .home::before {
+        width: 500px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .tech-card {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .tech-card i {
+        font-size: 2rem;
+    }
+
+    .tech-card p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .skill-h2 {
+        font-size: 25px;
+    }
+
+    .about-me-card {
+        max-width: 100%;
+    }
+    .about-me-card h2 {
+        font-size: 25px;
+    }
+
+    .about-me-card p {
+        font-size: 16px;
+    }
+
+    .hire-me-card {
+        width: 330px;
+    }
+
+    .hire-title {
+        font-size: 25px;
+    }
+
+    .hire-sub {
+        font-size: 20px;
+    }
+
+    .hire-me-card-content p {
+        font-size: 13px;
+    }
+
+    .contact h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-columns {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .contact-col {
+        width: 100%;
+    }
+
+    .info-label {
+        font-size: 0.8rem;
+    }
+
+    .info-value {
+        font-size: 1rem;
+    }
+
+    .social-link {
+        font-size: 1.2rem;
+        min-width: 100%;   /* full width underline instead of fixed 180px */
+    }
+    
+}
+

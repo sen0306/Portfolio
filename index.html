@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Sean Felix Portfolio</title>
+</head>
+<body>
+    <script>console.log('%cTEST LOG', 'color: red; font-size: 20px;');</script>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">Loading Portfolio..</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+        loader.classList.add('hidden');
+        }, 1000);   // small delay so the loading animation doesn't feel like a flash
+    });
+    </script>
+
+    <header class="header">
+
+        <nav class="navbar">
+            <div class="hover-bubble"></div>
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about-me" class="nav-item">About Me</a>
+            <a href="#featured-projects" class="nav-item">Academic Projects</a>
+            <a href="#skill" class="nav-item">Skills</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+<main>
+<section class="home" id="home">
+    <div id="tsparticles"></div>
+        <div class="home-content">
+            <h1>Hi, I'm Sean!</h1>
+            <h2>I'm a future <span id="cycling-text"></span></h2>
+            <p>I love to code on my free time and learn new tech stacks.</p>
+        </div>
+        <div class="orbit">
+        <div class="orbit-ring">
+            <i class="devicon-html5-plain colored orbit-icon"></i>
+            <i class="devicon-css3-plain colored orbit-icon"></i>
+            <i class="devicon-javascript-plain colored orbit-icon"></i>
+            <i class="devicon-python-plain colored orbit-icon"></i>
+            <i class="devicon-php-plain colored orbit-icon"></i>
+            <i class="devicon-mysql-plain colored orbit-icon"></i>
+            <i class="devicon-git-plain colored orbit-icon"></i>
+            <i class="devicon-vscode-plain colored orbit-icon"></i>
+        </div>
+        </div>
+    </section>
+
+    <section class="about-me" id="about-me">
+            <div class="about-me-card" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>I am someone who thrives on learning, problem-solving, and continuous growth. My personality of curiosity, adaptability, and persistence helps me tackle challenges.</p>
+                <p>I'm driven by a desire to make an impact and keep evolving both personally and professionally.</p>
+            </div>
+    </section>
+
+    <section class="carousel-section" id="featured-projects">
+    <div class="carousel-title" data-aos="fade-up">
+        <h2>My Academic Projects</h2>
+    </div>
+
+    <div class="carousel-track" id="carouselTrack" data-aos="fade-up" data-aos-delay="100">
+        <div class="carousel-card" style="background-image: url('assets/project1.png');">
+            <div class="card-overlay">
+                <span class="card-tag">FINAL YEAR PROJECT</span>
+                <h3>Student Attendance System</h3>
+            </div>
+            <div class="card-details">
+                
+                <span class="card-tag">FULL-STACK</span>
+                <h3>Student Attendance System</h3>
+                <p>A web-based attendance system built for a final year project, designed to streamline tracking and reporting for students and staff.</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+                <div class="detail-actions">
+                    <a href="https://github.com/sen0306/Project-Paper---UIU-V2.0-Student-Attendance-System" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-card" style="background-image: url('assets/project2.png');">
+            <div class="card-overlay">
+                <span class="card-tag">COURSEWORK</span>
+                <h3>E-Commerce Website</h3>
+            </div>
+            <div class="card-details">
+                
+                <span class="card-tag">FULL-STACK</span>
+                <h3>E-Commerce Website</h3>
+                <p>An e-commerce website built with a full-stack approach, allowing users to browse products, add them to a cart, and complete purchases.</p>
+                <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            <div class="detail-actions">
+                    <a href="https://github.com/sen0306/ss_ecommerce" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="carousel-card" style="background-image: url('assets/project3.png');">
+            <div class="card-overlay">
+                <span class="card-tag">COURSEWORK</span>
+                <h3>Parking Reservation System</h3>
+            </div>
+            <div class="card-details">
+                
+                <span class="card-tag">TERMINAL</span>
+                <h3>Parking Reservation System</h3>
+                <p>A terminal-based parking reservation system. Customer's are able to reserve a parking spot.</p>
+                <div class="tech-tags">
+                    <span>Python</span>
+                    <span>MySQL</span>
+                </div>
+            <div class="detail-actions">
+                    <a href="https://github.com/sen0306/parking-reservation-system" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            </div>
+        </div>
+
+    </div>  <!-- closes .carousel-track -->
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-arrow left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-arrow right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+    </section>
+    
+    <section class="skill" id="skill">
+        <h2 class="skill-h2" data-aos="fade-up">Technical Skills</h2>
+        <div class="tech-grid">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+                <i class="devicon-html5-plain colored"></i>
+                <p>HTML</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="50">
+                <i class="devicon-css3-plain colored"></i>
+                <p>CSS</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="devicon-javascript-plain colored"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="150">
+                <i class="devicon-python-plain colored"></i>
+                <p>Python</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="devicon-php-plain colored"></i>
+                <p>PHP</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="250">
+                <i class="devicon-mysql-plain colored"></i>
+                <p>MySQL</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="devicon-git-plain colored"></i>
+                <p>Git</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="350">
+                <i class="devicon-github-plain"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="devicon-vscode-plain colored"></i>
+                <p>Visual Studio Code</p>
+            </div>
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="450">
+                <i class="devicon-pycharm-plain colored"></i>
+                <p>PyCharm</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hire-me">
+        <div class="hire-me-card" data-aos="fade-up">
+            <div class="hire-me-card-content">
+                <h2 class="hire-title">Why hire me?</h2>
+                <h3 class="hire-sub">Quick Learner</h3>
+                <p>Had no experience in programming but successfully developed and deployed a static website within a short timeframe.</p>
+                <h3 class="hire-sub">Problem Solver</h3>
+                <p>Able to tackle problems and find effective solutions.</p>
+                <h3 class="hire-sub">Team Player</h3>
+                <p>Collaborated with team members and communicated effectively to achieve common goals.</p>
+                <h3 class="hire-sub">Independent</h3>
+                <p>Capable of working autonomously and taking initiative in completing tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 data-aos="fade-up">Contact Me</h2>
+    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="contact-columns">
+        <div class="contact-col">
+            <div class="info-block">
+                <span class="info-label">Email</span>
+                <p class="info-value">seanfelsonfelix@gmail.com</p>
+            </div>
+            <div class="info-block">
+                <span class="info-label">Location</span>
+                <p class="info-value">Malaysia</p>
+            </div>
+        </div>
+
+        <div class="contact-col">
+            <span class="info-label">Social</span>
+            <a href="https://github.com/sen0306" target="_blank" class="social-link">
+                GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/seanfelsonfelix" target="_blank" class="social-link">
+                LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="assets/SeanFelixResume-FINAL.pdf" download="SeanFelixResume-FINAL.pdf" class="social-link">
+                Resume <i class="fa-solid fa-download"></i>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800, 
+    });
+</script>
+
+<script>
+    const phrases = [
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Web Developer",
+];
+
+const el = document.getElementById("cycling-text");
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+    charIndex--;
+    } else {
+    charIndex++;
+    }
+
+    el.textContent = currentPhrase.substring(0, charIndex);
+
+    let typeSpeed = isDeleting ? 30 : 60; // deleting is faster than typing
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+    typeSpeed = 1500; // pause at the full phrase before deleting
+    isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length; // move to next phrase, loop back to start
+    typeSpeed = 300; // small pause before typing the next one
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+type();
+
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('section[id]');
+ 
+// Click: immediately mark the clicked link active, and smooth-scroll to its section
+navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+    e.preventDefault();
+ 
+    navItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+ 
+    const id = item.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+ 
+function updateActiveNav() {
+    const scrollPos = window.scrollY + 150;   // 150px offset accounts for your fixed header
+ 
+    let currentSection = sections[0];
+ 
+    sections.forEach(section => {
+        if (section.offsetTop <= scrollPos) {
+            currentSection = section;
+        }
+    });
+ 
+    const currentId = currentSection.getAttribute('id');
+ 
+    navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === `#${currentId}`);
+    });
+}
+ 
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
+ 
+const navbar = document.querySelector('.navbar');
+const bubble = document.querySelector('.hover-bubble');
+const navItem = document.querySelectorAll('.nav-item');
+ 
+navItem.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+    const itemRect = item.getBoundingClientRect();
+    const navRect = navbar.getBoundingClientRect();
+ 
+    bubble.style.width = `${itemRect.width}px`;
+    bubble.style.transform = `translateX(${itemRect.left - navRect.left}px)`;
+    });
+});
+
+const hamburger = document.getElementById('hamburger');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navbar.classList.toggle('active');
+});
+
+// close menu after clicking a nav link
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('active');
+    });
+});
+
+// NEW: close menu when clicking anywhere outside it
+document.addEventListener('click', (e) => {
+    const isClickInsideNavbar = navbar.contains(e.target);
+    const isClickOnHamburger = hamburger.contains(e.target);
+
+    if (!isClickInsideNavbar && !isClickOnHamburger && navbar.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+});
+
+const track = document.getElementById('carouselTrack');
+const cards = document.querySelectorAll('.carousel-card');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+
+window.addEventListener('load', () => {
+    scrollToCard(0);
+});
+
+const dotsContainer = document.getElementById('carouselDots');
+
+cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('carousel-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => scrollToCard(i));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dot');
+
+function updateDots(index) {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+function scrollToCard(index) {
+    if (index < 0) index = 0;
+    if (index >= cards.length) index = cards.length - 1;
+    currentIndex = index;
+
+    const card = cards[index];
+    const trackWidth = track.clientWidth;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+
+    const targetScrollLeft = cardLeft - (trackWidth / 2) + (cardWidth / 2);
+
+    track.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+    updateDots(index);   // add this line
+}
+
+nextBtn.addEventListener('click', () => scrollToCard(currentIndex + 1));
+prevBtn.addEventListener('click', () => scrollToCard(currentIndex - 1));
+
+let scrollDebounce;
+track.addEventListener('scroll', () => {
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => {
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, i) => {
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distance = Math.abs(cardCenter - trackCenter);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = i;
+            }
+        });
+
+        currentIndex = closestIndex;
+        updateDots(closestIndex);
+    }, 100);
+}, { passive: true });
+
+</script>
+
+</body>
+</html>
